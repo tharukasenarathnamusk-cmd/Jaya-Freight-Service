@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>JFS Transport – Jaya Freight Services | Sri Lanka</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Jaya Freight Services – Sri Lanka's trusted freight forwarding, customs clearance and logistics company with 33+ years of experience.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=DM+Sans:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<style>
+:root {
+  --green: #009B4D;
+  --green-dark: #007A3D;
+  --green-light: #00C060;
+  --teal: #006D5B;
+  --dark: #0D1B12;
+  --grey: #f4f6f4;
+  --white: #ffffff;
+  --font-head: 'Barlow Condensed', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-body); color: var(--dark); background: var(--white); overflow-x: hidden; }
+
+/* ── TOPBAR ── */
+.topbar { background: var(--dark); color: rgba(255,255,255,.65); font-size: .82rem; padding: .45rem 0; }
+.topbar a { color: rgba(255,255,255,.65); text-decoration: none; }
+.topbar a:hover { color: var(--green-light); }
+
+/* ── NAVBAR ── */
+.navbar-wrap { background: #fff; box-shadow: 0 2px 20px rgba(0,0,0,.08); position: sticky; top: 0; z-index: 1000; }
+.navbar { padding: .6rem 0; }
+.navbar-brand img { height: 54px; width: auto; }
+.nav-link { font-family: var(--font-head); font-size: 1.05rem; font-weight: 600; letter-spacing: .04em; color: var(--dark) !important; padding: .5rem 1rem !important; text-transform: uppercase; transition: color .25s; }
+.nav-link:hover, .nav-link.active { color: var(--green) !important; }
+.btn-quote { background: var(--green); color: #fff !important; border-radius: 4px; padding: .5rem 1.3rem !important; }
+.btn-quote:hover { background: var(--green-dark); }
+
+/* ── HERO ── */
+.hero { position: relative; min-height: 90vh; display: flex; align-items: center; overflow: hidden; }
+.hero-bg {
+  position: absolute; inset: 0;
+  background-image: url('img/hero.jpg');
+  background-size: cover; background-position: center;
+}
+.hero-bg::after { content:''; position:absolute; inset:0; background: linear-gradient(100deg, rgba(0,27,18,.88) 45%, rgba(0,100,60,.45) 100%); }
+.hero-content { position: relative; z-index: 2; }
+.hero-eyebrow { font-family: var(--font-head); font-size: 1rem; letter-spacing: .15em; text-transform: uppercase; color: var(--green-light); margin-bottom: .8rem; }
+.hero h1 { font-family: var(--font-head); font-size: clamp(2.8rem, 6vw, 5.5rem); font-weight: 800; line-height: 1.05; color: #fff; text-transform: uppercase; }
+.hero h1 span { color: var(--green-light); }
+.hero p { color: rgba(255,255,255,.8); font-size: 1.1rem; max-width: 520px; margin: 1.2rem 0 2rem; }
+.btn-primary-jfs { background: var(--green); border: none; color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; padding: .85rem 2.2rem; border-radius: 4px; text-decoration: none; transition: background .25s, transform .2s; display: inline-block; }
+.btn-primary-jfs:hover { background: var(--green-dark); transform: translateY(-2px); color:#fff; }
+.btn-outline-jfs { border: 2px solid rgba(255,255,255,.6); color: #fff; font-family: var(--font-head); font-weight: 700; font-size: 1rem; letter-spacing: .06em; text-transform: uppercase; padding: .8rem 2rem; border-radius: 4px; text-decoration: none; transition: all .25s; display: inline-block; }
+.btn-outline-jfs:hover { border-color: var(--green-light); color: var(--green-light); }
+.hero-stats { display: flex; gap: 2.5rem; margin-top: 3rem; }
+.hero-stat strong { display: block; font-family: var(--font-head); font-size: 2.4rem; font-weight: 800; color: var(--green-light); line-height: 1; }
+.hero-stat span { color: rgba(255,255,255,.7); font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; }
+
+/* ── SECTION HEADINGS ── */
+.section-label { font-family: var(--font-head); font-size: .9rem; letter-spacing: .18em; text-transform: uppercase; color: var(--green); margin-bottom: .5rem; }
+.section-title { font-family: var(--font-head); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; text-transform: uppercase; line-height: 1.1; }
+.section-title span { color: var(--green); }
+
+/* ── SERVICES ── */
+.services-section { padding: 6rem 0; background: var(--grey); }
+.service-card { background: #fff; border-radius: 8px; padding: 2.2rem 1.8rem; height: 100%; box-shadow: 0 4px 24px rgba(0,0,0,.06); transition: transform .3s, box-shadow .3s; position: relative; overflow: hidden; border-bottom: 4px solid transparent; }
+.service-card:hover { transform: translateY(-6px); box-shadow: 0 12px 36px rgba(0,155,77,.15); border-bottom-color: var(--green); }
+.service-icon { width: 58px; height: 58px; background: linear-gradient(135deg, var(--green), var(--teal)); border-radius: 12px; display: flex; align-items: center; justify-content: center; margin-bottom: 1.4rem; }
+.service-icon i { font-size: 1.5rem; color: #fff; }
+.service-card h4 { font-family: var(--font-head); font-size: 1.4rem; font-weight: 700; text-transform: uppercase; margin-bottom: .7rem; }
+.service-card p { color: #555; font-size: .93rem; line-height: 1.65; }
+
+/* ── ABOUT ── */
+.about-section { padding: 6rem 0; }
+.about-img-wrap { position: relative; }
+.about-img-main { width: 100%; border-radius: 10px; object-fit: cover; max-height: 480px; }
+.about-badge { position: absolute; bottom: -24px; right: -24px; background: var(--green); color: #fff; border-radius: 10px; padding: 1.5rem 2rem; text-align: center; box-shadow: 0 8px 30px rgba(0,155,77,.35); }
+.about-badge strong { display: block; font-family: var(--font-head); font-size: 3rem; font-weight: 800; line-height: 1; }
+.about-badge span { font-size: .85rem; text-transform: uppercase; letter-spacing: .08em; opacity: .9; }
+.about-feature { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+.about-feature-icon { width: 40px; height: 40px; min-width: 40px; background: rgba(0,155,77,.1); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.about-feature-icon i { color: var(--green); font-size: 1rem; }
+
+/* ── STATS BAND ── */
+.stats-band { background: var(--dark); padding: 3.5rem 0; }
+.stat-item { text-align: center; }
+.stat-item strong { display: block; font-family: var(--font-head); font-size: 3rem; font-weight: 800; color: var(--green-light); }
+.stat-item span { color: rgba(255,255,255,.65); font-size: .85rem; text-transform: uppercase; letter-spacing: .1em; }
+
+/* ── LOCATIONS ── */
+.locations-section { padding: 6rem 0; background: var(--grey); }
+.location-card { background: #fff; border-radius: 8px; padding: 1.6rem; box-shadow: 0 4px 20px rgba(0,0,0,.06); display: flex; align-items: flex-start; gap: 1rem; transition: transform .3s; }
+.location-card:hover { transform: translateY(-4px); }
+.loc-icon { width: 46px; height: 46px; min-width: 46px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.loc-icon i { color: #fff; }
+.location-card h5 { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; text-transform: uppercase; margin-bottom: .2rem; }
+.location-card p { margin: 0; color: #666; font-size: .88rem; }
+
+/* ── TEAM ── */
+.team-section { padding: 6rem 0; }
+.team-img { width: 100%; border-radius: 10px; object-fit: cover; max-height: 420px; }
+
+/* ── WHY CHOOSE US ── */
+.why-section { padding: 6rem 0; background: var(--dark); }
+.why-card { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.08); border-radius: 10px; padding: 2rem 1.8rem; height: 100%; transition: background .3s, border-color .3s; }
+.why-card:hover { background: rgba(0,155,77,.12); border-color: var(--green); }
+.why-card i { font-size: 2rem; color: var(--green-light); margin-bottom: 1rem; display: block; }
+.why-card h5 { font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; text-transform: uppercase; color: #fff; margin-bottom: .6rem; }
+.why-card p { color: rgba(255,255,255,.6); font-size: .9rem; line-height: 1.65; margin: 0; }
+
+
+/* ── CONTACT ── */
+.contact-section { padding: 6rem 0; background: var(--dark); position: relative; overflow: hidden; }
+.contact-section::before { content: 'JFS'; position: absolute; right: -2rem; top: 50%; transform: translateY(-50%); font-family: var(--font-head); font-size: 20rem; font-weight: 800; color: rgba(255,255,255,.03); pointer-events: none; line-height: 1; }
+.contact-info-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 2rem; }
+.contact-icon { width: 50px; height: 50px; min-width: 50px; background: var(--green); border-radius: 8px; display: flex; align-items: center; justify-content: center; }
+.contact-icon i { color: #fff; font-size: 1.1rem; }
+.contact-info-item h5 { font-family: var(--font-head); font-size: 1rem; color: rgba(255,255,255,.5); text-transform: uppercase; letter-spacing: .08em; margin-bottom: .2rem; }
+.contact-info-item p { color: #fff; font-size: 1.05rem; margin: 0; }
+.contact-form { background: rgba(255,255,255,.05); border-radius: 10px; padding: 2.5rem; backdrop-filter: blur(8px); border: 1px solid rgba(255,255,255,.08); }
+.contact-form .form-control, .contact-form .form-select { background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.12); color: #fff; border-radius: 6px; padding: .75rem 1rem; }
+.contact-form .form-control::placeholder { color: rgba(255,255,255,.35); }
+.contact-form .form-control:focus { background: rgba(255,255,255,.1); border-color: var(--green); box-shadow: none; color: #fff; }
+.contact-form label { color: rgba(255,255,255,.7); font-size: .88rem; margin-bottom: .4rem; }
+
+/* ── FOOTER ── */
+footer { background: #080f0a; padding: 4rem 0 1.5rem; color: rgba(255,255,255,.5); }
+footer .brand-name { font-family: var(--font-head); font-size: 1.8rem; font-weight: 800; color: #fff; text-transform: uppercase; letter-spacing: .06em; }
+footer .brand-name span { color: var(--green-light); }
+footer h5 { font-family: var(--font-head); color: rgba(255,255,255,.9); text-transform: uppercase; letter-spacing: .08em; font-size: 1rem; margin-bottom: 1.2rem; }
+footer a { color: rgba(255,255,255,.5); text-decoration: none; transition: color .2s; display: block; margin-bottom: .5rem; font-size: .92rem; }
+footer a:hover { color: var(--green-light); }
+.footer-divider { border-color: rgba(255,255,255,.08); margin: 2.5rem 0 1.5rem; }
+.social-btn { width: 38px; height: 38px; background: rgba(255,255,255,.07); border-radius: 6px; display: inline-flex; align-items: center; justify-content: center; color: rgba(255,255,255,.6); text-decoration: none; transition: background .2s, color .2s; margin-right: .5rem; font-size: .9rem; }
+.social-btn:hover { background: var(--green); color: #fff; }
+
+/* ── BACK TO TOP ── */
+#backTop { position: fixed; bottom: 1.5rem; right: 1.5rem; width: 42px; height: 42px; background: var(--green); color: #fff; border: none; border-radius: 6px; font-size: 1rem; cursor: pointer; z-index: 999; opacity: 0; transition: opacity .3s, transform .3s; transform: translateY(10px); display: flex; align-items: center; justify-content: center; }
+#backTop.visible { opacity: 1; transform: translateY(0); }
+#backTop:hover { background: var(--green-dark); }
+
+/* ── WHATSAPP FLOAT ── */
+.wa-float { position: fixed; bottom: 4.5rem; right: 1.5rem; width: 48px; height: 48px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; z-index: 999; box-shadow: 0 4px 16px rgba(37,211,102,.5); transition: transform .2s; }
+.wa-float:hover { transform: scale(1.1); color:#fff; }
+
+/* ── UTILS ── */
+.divider-line { width: 48px; height: 4px; background: var(--green); border-radius: 2px; margin-bottom: 1.5rem; }
+@media (max-width: 767px) {
+  .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
+  .about-badge { right: 0; bottom: -16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar d-none d-lg-block">
+  <div class="container d-flex justify-content-between align-items-center">
+    <div>
+      <a href="#"><i class="fa fa-map-marker-alt me-1"></i> Gurugamwala Mawatha, Minuwangoda Rd, Diviyagala, Mudungoda</a>
+      <span class="mx-3" style="opacity:.3">|</span>
+      <a href="#"><i class="fa fa-clock me-1"></i> Mon–Sat 08am–6pm</a>
+    </div>
+    <div>
+      <a href="tel:+94706100180" class="me-3"><i class="fa fa-phone me-1"></i>+94 706 100 180</a>
+      <a href="mailto:info@jfstransport.lk"><i class="fa fa-envelope me-1"></i>info@jfstransport.lk</a>
+    </div>
+  </div>
+</div>
+
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@1,700&display=swap" rel="stylesheet">
+
+
+<!-- NAVBAR -->
+<div class="navbar-wrap">
+  <div class="container">
+    <nav class="navbar navbar-expand-lg">
+      <a class="navbar-brand" href="#">
+        
+          <div style="display: flex; align-items: center;">
+
+    <img src="img/logo.png" alt="Photo" width="100">
+
+     <h2 style="
+              color: green;
+              margin-left: 10px;
+              font-family: 'Barlow Condensed', sans-serif;
+              font-style: italic;
+              font-weight: 700;
+          ">
+              Jaya Freight Services
+          </h2>
+
+</div>
+
+        
+      </a>
+      <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navMain">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navMain">
+        <ul class="navbar-nav align-items-lg-center gap-lg-1 ms-lg-4">
+          <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+          <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+          <li class="nav-item"><a class="nav-link" href="#locations">Locations</a></li>
+          <li class="nav-item"><a class="nav-link" href="#team">Our Team</a></li>
+          <li class="nav-item"><a class="nav-link btn-quote ms-lg-2" href="#contact">Request a Quote</a></li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+</div>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <div class="container hero-content py-5">
+    <div class="row">
+      <div class="col-lg-7">
+        <p class="hero-eyebrow">Sri Lanka's Trusted Logistics Partner</p>
+        <h1>Delivering <span>Excellence</span><br>In Every Shipment</h1>
+        <p>Jaya Freight Services provides end-to-end freight forwarding, customs clearance, and island-wide transport solutions — backed by 33+ years of industry expertise.</p>
+        <div class="d-flex flex-wrap gap-3">
+          <a href="#contact" class="btn-primary-jfs">Get a Free Quote</a>
+          <a href="#services" class="btn-outline-jfs">Our Services</a>
+        </div>
+        <div class="hero-stats">
+          <div class="hero-stat"><strong>33+</strong><span>Years Experience</span></div>
+          <div class="hero-stat"><strong>24/7</strong><span>Operations</span></div>
+          <div class="hero-stat"><strong>24+</strong><span>Fleet Vehicles</span></div>
+          <div class="hero-stat"><strong>5</strong><span>Office Locations</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">What We Do</p>
+      <h2 class="section-title">Our <span>Services</span></h2>
+      <div class="divider-line mx-auto mt-3"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa fa-ship"></i></div>
+          <h4>Freight Forwarding</h4>
+          <p>Import &amp; export handling via air and sea freight with full end-to-end shipment management and documentation support.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa fa-file-alt"></i></div>
+          <h4>Customs Clearance</h4>
+          <p>CUSDEC processing, HS Code classification, duty consultation, and full regulatory compliance with Sri Lanka Customs &amp; BOI.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa fa-truck"></i></div>
+          <h4>Transportation &amp; Logistics</h4>
+          <p>24/7 island-wide delivery with a scalable fleet of 24+ vehicles, ensuring on-time delivery even on holidays.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa fa-warehouse"></i></div>
+          <h4>Warehousing &amp; Support</h4>
+          <p>Safe cargo handling, driver rest facilities, dispatch coordination, and accommodation support for uninterrupted operations.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa fa-globe"></i></div>
+          <h4>International Operations</h4>
+          <p>Through SPK Trading, we extend operations to India, China, and the UK — providing global freight connectivity from Sri Lanka.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="service-card">
+          <div class="service-icon"><i class="fa fa-handshake"></i></div>
+          <h4>Consultancy Services</h4>
+          <p>Expert guidance on Customs and BOI regulations, import/export compliance, and full documentation management.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about-section" id="about">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="about-img-wrap pe-lg-4">
+          <img src="img/hero.jpg" alt="JFS Transport Fleet" class="about-img-main">
+          <div class="about-badge">
+            <strong>33+</strong>
+            <span>Years of<br>Excellence</span>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-6 ps-lg-5">
+        <p class="section-label">Who We Are</p>
+        <h2 class="section-title mb-3">Jaya Freight <span>Services</span></h2>
+        <div class="divider-line"></div>
+        <p class="mb-4" style="color:#444; line-height:1.8;">Established in 2009 and built on over 33 years of industry experience, JFS is Sri Lanka's trusted name in freight forwarding and logistics. We maintain strong relationships with Sri Lanka Customs and the Board of Investment (BOI), ensuring smooth, compliant operations for our clients every time.</p>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fa fa-check"></i></div>
+          <div><strong>Zero complaints record</strong> with long-standing key clients including Avery Dennison.</div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fa fa-check"></i></div>
+          <div><strong>24/7 uninterrupted service</strong> including emergency and holiday shipment handling.</div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fa fa-check"></i></div>
+          <div><strong>81+ dedicated professionals</strong> across clearing, freight, transport, and international teams.</div>
+        </div>
+        <div class="about-feature">
+          <div class="about-feature-icon"><i class="fa fa-check"></i></div>
+          <div><strong>Flexible and scalable solutions</strong> with rapid deployment for complex, high-volume projects.</div>
+        </div>
+        <a href="#contact" class="btn-primary-jfs mt-3">Talk to Us</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS BAND -->
+<div class="stats-band">
+  <div class="container">
+    <div class="row g-4 text-center">
+      <div class="col-6 col-lg-3 stat-item"><strong>33+</strong><span>Years in Industry</span></div>
+      <div class="col-6 col-lg-3 stat-item"><strong>81+</strong><span>Team Members</span></div>
+      <div class="col-6 col-lg-3 stat-item"><strong>24+</strong><span>Fleet Vehicles</span></div>
+      <div class="col-6 col-lg-3 stat-item"><strong>5</strong><span>Office Locations</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- LOCATIONS -->
+<section class="locations-section" id="locations">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Where We Are</p>
+      <h2 class="section-title">Our <span>Locations</span></h2>
+      <div class="divider-line mx-auto mt-3"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-xl-4">
+        <div class="location-card">
+          <div class="loc-icon"><i class="fa fa-building"></i></div>
+          <div>
+            <h5>Head Office</h5>
+            <p>Established 2009 · Mudungoda, Minuwangoda</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="location-card">
+          <div class="loc-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div>
+            <h5>Battaramulla Office</h5>
+            <p>Since 2010 · Western Province</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="location-card">
+          <div class="loc-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div>
+            <h5>Biyagama Office</h5>
+            <p>Opened 2023 · Gampaha District</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="location-card">
+          <div class="loc-icon"><i class="fa fa-truck"></i></div>
+          <div>
+            <h5>Biyagama Driver Facility</h5>
+            <p>Opened 2025 · Rest &amp; dispatch centre</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-xl-4">
+        <div class="location-card">
+          <div class="loc-icon"><i class="fa fa-globe"></i></div>
+          <div>
+            <h5>International – SPK Trading</h5>
+            <p>Since 2024 · India, China, United Kingdom</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TEAM -->
+<section class="team-section" id="team">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 order-lg-2">
+        <img src="img/group.jpg" alt="JFS Transport Team" class="team-img">
+      </div>
+      <div class="col-lg-6 order-lg-1">
+        <p class="section-label">The People Behind JFS</p>
+        <h2 class="section-title mb-3">Our <span>Team</span></h2>
+        <div class="divider-line"></div>
+        <p style="color:#444; line-height:1.8;" class="mb-4">Our 81+ strong team of professionals work around the clock to keep your supply chain moving. From clearing agents and freight coordinators to drivers and international trade specialists — every member is committed to delivering excellence.</p>
+        <div class="row g-3">
+          <div class="col-6">
+            <div class="p-3 rounded" style="background:var(--grey); text-align:center;">
+              <strong class="d-block" style="font-family:var(--font-head);font-size:2rem;color:var(--green);">22</strong>
+              <span style="font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;">Clearing Staff</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 rounded" style="background:var(--grey); text-align:center;">
+              <strong class="d-block" style="font-family:var(--font-head);font-size:2rem;color:var(--green);">10</strong>
+              <span style="font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;">Freight Staff</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 rounded" style="background:var(--grey); text-align:center;">
+              <strong class="d-block" style="font-family:var(--font-head);font-size:2rem;color:var(--green);">21</strong>
+              <span style="font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;">Transport Team</span>
+            </div>
+          </div>
+          <div class="col-6">
+            <div class="p-3 rounded" style="background:var(--grey); text-align:center;">
+              <strong class="d-block" style="font-family:var(--font-head);font-size:2rem;color:var(--green);">28</strong>
+              <span style="font-size:.85rem;text-transform:uppercase;letter-spacing:.06em;">SPK &amp; Support</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section class="why-section">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label" style="color:var(--green-light)">Why Choose Us</p>
+      <h2 class="section-title text-white">Trusted by <span>Businesses</span> Across Sri Lanka</h2>
+      <div class="divider-line mx-auto mt-3"></div>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card">
+          <i class="fa fa-award"></i>
+          <h5>33+ Years of Experience</h5>
+          <p>Decades of expertise in freight, customs, and logistics — giving you confidence in every shipment we handle.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card">
+          <i class="fa fa-clock"></i>
+          <h5>24/7 Operations</h5>
+          <p>We don't stop — not on weekends, not on holidays. Your cargo moves whenever it needs to.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card">
+          <i class="fa fa-shield-alt"></i>
+          <h5>Zero Complaints Record</h5>
+          <p>Proven reliability with long-standing client partnerships and a spotless service record.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card">
+          <i class="fa fa-landmark"></i>
+          <h5>Government Connections</h5>
+          <p>Strong ties with Sri Lanka Customs and BOI ensure smooth, penalty-free clearances every time.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card">
+          <i class="fa fa-expand-arrows-alt"></i>
+          <h5>Scalable Fleet &amp; Team</h5>
+          <p>Scale up to 24+ vehicles and 81+ staff on demand — we grow with your business requirements.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-4">
+        <div class="why-card">
+          <i class="fa fa-headset"></i>
+          <h5>Dedicated Support</h5>
+          <p>On-site dedicated staff for key clients, plus a responsive team always ready to assist.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT / QUOTE -->
+<section class="contact-section" id="contact">
+  <div class="container position-relative" style="z-index:2">
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <p class="section-label" style="color:var(--green-light);">Get In Touch</p>
+        <h2 class="section-title text-white mb-4">Request a <span>Quote</span></h2>
+        <div class="divider-line mb-4"></div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fa fa-map-marker-alt"></i></div>
+          <div>
+            <h5>Address</h5>
+            <p>Gurugamwala Mawatha, Minuwangoda Rd,<br>Diviyagala, Mudungoda</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fa fa-phone"></i></div>
+          <div>
+            <h5>Phone</h5>
+            <p>+94 706 100 180 / +94 706 100 150 / +94 706 100 160</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fa fa-envelope"></i></div>
+          <div>
+            <h5>Email</h5>
+            <p>info@jfstransport.lk</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+          <div>
+            <h5>WhatsApp</h5>
+            <p>+94 706 100 180</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="contact-form">
+          <h4 style="font-family:var(--font-head);color:#fff;text-transform:uppercase;margin-bottom:1.5rem;">Tell Us About Your Shipment</h4>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label>Your Name</label>
+              <input type="text" class="form-control" placeholder="Full name">
+            </div>
+            <div class="col-md-6">
+              <label>Phone / WhatsApp</label>
+              <input type="text" class="form-control" placeholder="+94 7xx xxx xxx">
+            </div>
+            <div class="col-md-6">
+              <label>Email Address</label>
+              <input type="email" class="form-control" placeholder="you@company.com">
+            </div>
+            <div class="col-md-6">
+              <label>Service Required</label>
+              <select class="form-select form-control" style="color:rgba(255,255,255,.6)">
+                <option value="" style="color:#333">Select a service</option>
+                <option style="color:#333">Freight Forwarding</option>
+                <option style="color:#333">Customs Clearance</option>
+                <option style="color:#333">Island-wide Transport</option>
+                <option style="color:#333">Warehousing</option>
+                <option style="color:#333">Consultancy</option>
+                <option style="color:#333">International Freight</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label>Message / Details</label>
+              <textarea class="form-control" rows="4" placeholder="Describe your shipment or logistics requirement..."></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn-primary-jfs w-100" style="text-align:center;cursor:pointer;">
+                <i class="fa fa-paper-plane me-2"></i>Send My Enquiry
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <img src="img/logo.png" 
+     alt="Flower" 
+     width="200"
+     style="margin-bottom: 20px;">
+
+<p class="mb-3">
+    Jaya Freight Services – delivering reliable, efficient, and customer-focused logistics solutions across Sri Lanka and beyond since 2009.
+</p>
+        <div class="mt-3">
+          <a href="#" class="social-btn"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" class="social-btn"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-2">
+        <h5>Quick Links</h5>
+        <a href="#home">Home</a>
+        <a href="#about">About Us</a>
+        <a href="#services">Services</a>
+        <a href="#locations">Locations</a>
+        <a href="#team">Our Team</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <h5>Our Services</h5>
+        <a href="#services">Freight Forwarding</a>
+        <a href="#services">Customs Clearance</a>
+        <a href="#services">Island-wide Transport</a>
+        <a href="#services">Warehousing</a>
+        <a href="#services">International Freight</a>
+        <a href="#services">Consultancy</a>
+      </div>
+      <div class="col-lg-3">
+        <h5>Contact Info</h5>
+        <p><i class="fa fa-phone me-2" style="color:var(--green-light)"></i>+94 706 100 180</p>
+        <p><i class="fa fa-phone me-2" style="color:var(--green-light)"></i>+94 706 100 150</p>
+        <p><i class="fa fa-envelope me-2" style="color:var(--green-light)"></i>info@jfstransport.lk</p>
+        <p><i class="fa fa-map-marker-alt me-2" style="color:var(--green-light)"></i>Mudungoda, Minuwangoda</p>
+      </div>
+    </div>
+    <hr class="footer-divider">
+    <div class="d-flex flex-wrap justify-content-between align-items-center gap-2">
+      <p class="mb-0">&copy; 2026 Jaya Freight Services (Pvt) Ltd. All Rights Reserved.</p>
+      <p class="mb-0">"Reliable Logistics. Trusted Service."</p>
+    </div>
+  </div>
+</footer>
+
+<!-- BACK TO TOP -->
+<button id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="fa fa-arrow-up"></i></button>
+
+<!-- WHATSAPP FLOAT -->
+<a href="https://wa.me/94706100180" class="wa-float" target="_blank" title="WhatsApp Us"><i class="fab fa-whatsapp"></i></a>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+// Back to top visibility
+window.addEventListener('scroll', () => {
+  document.getElementById('backTop').classList.toggle('visible', window.scrollY > 300);
+});
+
+// Active nav link on scroll
+const sections = document.querySelectorAll('section[id], .hero[id]');
+const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 100) current = s.id; });
+  navLinks.forEach(a => {
+    a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+  });
+});
+</script>
+</body>
+</html>
