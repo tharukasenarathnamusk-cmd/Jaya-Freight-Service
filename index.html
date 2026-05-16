@@ -148,13 +148,22 @@ footer a:hover { color: var(--green-light); }
 .wa-float { position: fixed; bottom: 4.5rem; right: 1.5rem; width: 48px; height: 48px; background: #25D366; color: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; text-decoration: none; z-index: 999; box-shadow: 0 4px 16px rgba(37,211,102,.5); transition: transform .2s; }
 .wa-float:hover { transform: scale(1.1); color:#fff; }
 
+/* ── TRUSTED BY ── */
+.trusted-section { padding: 5rem 0; background: var(--grey); }
+.trusted-logos { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 2.5rem 3.5rem; margin-top: 2.5rem; }
+.trusted-logo-item { display: flex; align-items: center; justify-content: center; filter: grayscale(100%); opacity: .55; transition: filter .3s, opacity .3s, transform .3s; }
+.trusted-logo-item:hover { filter: grayscale(0%); opacity: 1; transform: scale(1.06); }
+.trusted-logo-item img { max-height: 54px; max-width: 160px; width: auto; object-fit: contain; }
+
 /* ── UTILS ── */
 .divider-line { width: 48px; height: 4px; background: var(--green); border-radius: 2px; margin-bottom: 1.5rem; }
 @media (max-width: 767px) {
   .hero-stats { flex-wrap: wrap; gap: 1.5rem; }
   .about-badge { right: 0; bottom: -16px; }
 }
+
 </style>
+<link rel="icon" type="image/png" href="img/logo.png">
 </head>
 <body>
 
@@ -444,6 +453,43 @@ footer a:hover { color: var(--green-light); }
             </div>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUSTED BY -->
+<section class="trusted-section">
+  <div class="container">
+    <div class="text-center">
+      <p class="section-label">Our Clients</p>
+      <h2 class="section-title">Trusted by <span>Leading Companies</span></h2>
+      <div class="divider-line mx-auto mt-3"></div>
+    </div>
+    <div class="trusted-logos">
+      <div class="trusted-logo-item">
+        <img src="img/wurth.png" alt="Wurth">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/ansell.png" alt="Ansell">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/mas.png" alt="MAS Active">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/hemas.png" alt="Hemas">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/bartleet.png" alt="Bartleet Agrotronics">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/singer.png" alt="Singer">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/savinda.png" alt="Savinda Printing & Packaging">
+      </div>
+      <div class="trusted-logo-item">
+        <img src="img/avery.png" alt="Avery Dennison">
       </div>
     </div>
   </div>
